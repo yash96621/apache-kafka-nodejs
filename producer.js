@@ -17,6 +17,8 @@ async function init() {
   rl.prompt();
 
   rl.on("line", async function (line) {
+    console.log("🚀 ~ line:", line);
+
     const [riderName, location] = line.split(" ");
     await producer.send({
       topic: "rider-status",
